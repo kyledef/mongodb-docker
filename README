@@ -1,0 +1,14 @@
+Command to run docker in daemon mode and to bind to all interfaces on correct port:
+
+ docker run -d -p 0.0.0.0:27017:27017 itonline/mongodb
+
+
+
+Need to add volume option to above command. 
+
+Why?
+
+By having a separate container that is only responsible for
+persistent data storage, the data will still exist even in
+the case of the mongo container being deleted or upgraded. Therefore
+the database server can be hotswapped if necessary... etc

@@ -11,6 +11,7 @@ RUN true or ln -s /bin/true /sbin/initctl
 RUN apt-get update
 RUN apt-get install mongodb-10gen
 
+ADD ./bstrap.sh /
+RUN chmod +x ./bstrap.sh
 
 EXPOSE 27017
-ENTRYPOINT ["usr/bin/mongod"]
